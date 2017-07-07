@@ -1,0 +1,31 @@
+/* Grid */
+.xug-grid-row-blocked,
+.xug-grid-row-blocked a {
+    color: #ea0000 !important;
+}
+
+/* Search field */
+.x-field-search-clear,
+.x-field-search-go {
+    border-left: 1px solid #e4e4e4 !important;
+}
+.x-field-search-clear:hover,
+.x-field-search-go:hover {
+    border-left-color: transparent !important;
+}
+.x-field-search-clear:before {
+    content: '\f00d' !important;
+}
+.x-field-search-go {
+    right: 31px !important;
+    border-radius: 0 !important;
+}
+.x-field-search-go:before {
+    content: '\f002' !important;
+}
+
+/* Combo */
+.x-combo-list .x-combo-list-item.xug-combo__list-item,
+.x-combo-list .x-combo-list-item.x-combo-selected.xug-combo__list-item.x-combo-selected {
+    border-bottom: 1px dotted #dedede !important;
+}
