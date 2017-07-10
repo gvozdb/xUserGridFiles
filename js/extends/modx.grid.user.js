@@ -188,7 +188,7 @@ xUserGrid.grid.modxUserExt = function (config) {
     });
     xUserGrid.grid.modxUserExt.superclass.constructor.call(this, config);
 };
-Ext.extend(xUserGrid.grid.modxUserExt, MODx.grid.User, {
+Ext.extend(xUserGrid.grid.modxUserExt, Ext.ComponentMgr.types['modx-grid-user'], {
     filterCountry: function (cb, nv, ov) {
         this.getStore().baseParams.country = Ext.isEmpty(nv) || Ext.isObject(nv) ? cb.getValue() : nv;
         this.getBottomToolbar().changePage(1);
