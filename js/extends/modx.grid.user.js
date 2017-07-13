@@ -36,9 +36,32 @@ xUserGrid.grid.modxUserExt = function (config) {
             'dob',
             'country',
             'city',
+            'photo',
         ],
         // Формируем список колонок таблицы под себя, удаляя ненужные (чекбокс, к примеру) и добавляя требуемые (страну, город, дату рождения)
         columns: [{
+            header: '<i class="icon icon-picture-o"></i>',
+            dataIndex: 'photo',
+            width: 80,
+            sortable: false,
+            fixed: true,
+            resizable: false,
+            renderer: function (val) {
+                var img = '';
+                if (val['length'] > 0) {
+                    if (!/(jpg|jpeg|png|gif|bmp)$/.test(val.toLowerCase())) {
+                        return val;
+                    } else if (/^(http|https)/.test(val)) {
+                        img = val;
+                    } else {
+                        img = MODx.config['connectors_url'] + 'system/phpthumb.php?&src=' + val + '&wctx=web&h=50&zc=0';
+                    }
+                } else {
+                    return '';
+                }
+                return String.format('<div style="margin:-13px -18px -13px -5px"><img src="{0}"></div>', img);
+            },
+        }, {
             header: _('id'),
             dataIndex: 'id',
             width: 60,

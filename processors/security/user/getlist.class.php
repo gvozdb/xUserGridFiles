@@ -47,6 +47,7 @@ class xugUserGetListProcessor extends modUserGetListProcessor
             'dob',
             'country',
             'city',
+            'photo',
         )));
 
         return $c;
@@ -89,4 +90,5 @@ class xugUserGetListProcessor extends modUserGetListProcessor
         return empty($key) ? $this->country_lang : (!empty($this->country_lang[$key]) ? $this->country_lang[$key] : '');
     }
 }
+
 return 'xugUserGetListProcessor';
